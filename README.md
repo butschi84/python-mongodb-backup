@@ -10,6 +10,36 @@ The tool lists all databases on mongodb atlas and creates backups, which are the
 * create backups (gzip)
 * upload backups to gcloud
 
+# setup
+
+## gcloud
+
+**GCloud Project ID**<br />
+Make note of your gcloud project id.
+![](docs/gcloud_projectid.png)
+
+**GCloud Service Account**<br />
+In Google Cloud IAM, create a service account with "storage admin" privilege.
+Export a key file (sa.json) for the service account. The main.py script needs the sa.json in order to access the bucket on google cloud storage.
+![](docs/gcloud_serviceaccount.png)
+
+**GCloud Storage Bucket**<br />
+Create a storage bucket on your Google Cloud with settings as you like and make note of the bucket ID.
+
+## mongodb atlas
+
+This tool is made to backup all databases from your mongodb atlas. So you should make note of your servername, username and password.
+
+## Utility Setup
+Now you can fill all necessary variables in env.sh and execute the backup utility
+
+```
+. ./env.sh
+python3 -m pip install -r requirements.txt
+python3 src/main.py
+```
+
+
 # MongoDB Backup and Restore (manually)
 
 A short user manual to create manual database dumps and restores

@@ -1,0 +1,12 @@
+image:
+  name: mycontainerregistry/mongodb-backup
+  version: "1.0"
+
+gcloud:
+  bucket: "my-mongodb-backup-storage"
+  project: myproject-1234
+
+mongo:
+  username: "admin"
+  password: ""
+  server: ""
